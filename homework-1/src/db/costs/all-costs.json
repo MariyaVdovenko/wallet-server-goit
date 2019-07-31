@@ -1,0 +1,89 @@
+[
+  {
+    "id": 19112831,
+    "name": "Пицца Пепперони с томатами",
+    "description": "",
+    "price": "100",
+    "currency": "UAN",
+    "created": "21-07-2019",
+    "modified": "23-07-2019",
+    "categories": ["food"]
+  },
+  {
+    "id": 19112832,
+    "name": "Суши",
+    "description": "",
+    "price": "80",
+    "currency": "UAN",
+    "creatorId": 1,
+    "created": "20-07-2019",
+    "modified": "20-07-2019",
+    "categories": ["food"]
+  },
+  {
+    "id": 19112833,
+    "name": "Собачий корм",
+    "description": "",
+    "price": "1500",
+    "currency": "UAN",
+    "creatorId": 1,
+    "created": "23-07-2019",
+    "modified": "24-07-2019",
+    "categories": ["dogfood"]
+  },
+  {
+    "id": 19112834,
+    "name": "Помидоры",
+    "description": "",
+    "price": "57",
+    "currency": "UAN",
+    "creatorId": 1,
+    "created": "20-07-2019",
+    "modified": "28-07-2019",
+    "categories": ["food"]
+  },
+  {
+    "id": 19112835,
+    "name": "Яблоки",
+    "description": "",
+    "price": "38",
+    "currency": "UAN",
+    "creatorId": 1,
+    "created": "20-07-2019",
+    "modified": "29-07-2019",
+    "categories": ["food"]
+  },
+  {
+    "id": 19112836,
+    "name": "Лампочка",
+    "description": "",
+    "price": "36",
+    "currency": "UAN",
+    "creatorId": 1,
+    "created": "29-07-2019",
+    "modified": "29-07-2019",
+    "categories": ["tech"]
+  },
+  {
+    "id": 19112837,
+    "name": "Кефир",
+    "description": "",
+    "price": "23",
+    "currency": "UAN",
+    "creatorId": 1,
+    "created": "20-07-2019",
+    "modified": "20-07-2019",
+    "categories": ["food"]
+  },
+  {
+    "id": 19112838,
+    "name": "Батарейки",
+    "description": "",
+    "price": "150",
+    "currency": "UAN",
+    "creatorId": 1,
+    "created": "20-07-2019",
+    "modified": "20-07-2019",
+    "categories": ["tech"]
+  }
+]
