@@ -1,5 +1,5 @@
-const fs = require('fs');
-const costsAll = './src/db/costs/all-costs.json';
+const fs = require("fs");
+const costsAll = "./src/db/costs/all-costs.json";
 
 function getCostsByCategory(req, res) {
   const category = req.query.category;
@@ -16,10 +16,10 @@ function getCostsByCategory(req, res) {
     }
 
     const costsByCategory = costs.filter(cost =>
-      cost.categories.includes(category),
+      cost.categories.includes(category)
     );
 
-    let answerStatus = 'success';
+    let answerStatus = "success";
 
     if (!costsByCategory.length) {
       answerStatus = `Cost in category ${category} not found`;
@@ -27,7 +27,7 @@ function getCostsByCategory(req, res) {
 
     const response = {
       status: answerStatus,
-      costs: costsByCategory,
+      costs: costsByCategory
     };
 
     res.status(200).json(response);
