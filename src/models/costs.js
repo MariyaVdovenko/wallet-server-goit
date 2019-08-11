@@ -18,10 +18,10 @@ exports.findById = function(id, cb) {
     });
 };
 
-exports.findByCategory = function(getCategory, cb) {
+exports.findByCategory = function(category, cb) {
   db.get()
     .collection('costs')
-    .find({ categories: getCategory }, function(err, doc) {
+    .find({ categories: `"${category}"` }, function(err, doc) {
       cb(err, doc);
     });
 };

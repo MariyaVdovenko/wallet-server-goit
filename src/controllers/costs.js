@@ -19,6 +19,7 @@ exports.findById = function(req, res) {
     res.send(doc);
   });
 };
+
 exports.findByCategory = function(req, res) {
   const category = req.query.category;
   Costs.findByCategory(category, function(err, doc) {
@@ -40,7 +41,7 @@ exports.create = function(req, res) {
     currency: req.body.currency,
     created: req.body.created,
     modified: req.body.modified,
-    categories: [req.body.categories],
+    categories: req.body.categories,
   };
   Costs.create(cost, function(err, result) {
     if (err) {
