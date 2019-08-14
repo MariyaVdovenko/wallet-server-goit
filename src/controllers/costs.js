@@ -1,14 +1,5 @@
 const Costs = require('../models/costs');
-
-exports.all = function(req, res) {
-  Costs.all(function(err, docs) {
-    if (err) {
-      console.log(err);
-      return res.sendStatus(500);
-    }
-    res.send(docs);
-  });
-};
+const moment = require('moment');
 
 exports.findById = function(req, res) {
   Costs.findById(req.params.id, function(err, doc) {
@@ -22,6 +13,7 @@ exports.findById = function(req, res) {
 
 exports.findByCategory = function(req, res) {
   const category = req.query.category;
+
   Costs.findByCategory(category, function(err, doc) {
     if (err) {
       console.log(err);
@@ -29,6 +21,7 @@ exports.findByCategory = function(req, res) {
       //   )`Cost in category ${category} not found`);
       return res.sendStatus(500);
     }
+
     res.send(doc);
   });
 };
@@ -51,12 +44,16 @@ exports.create = function(req, res) {
     res.send(cost);
   });
 };
-
+//upd price
 exports.update = function(req, res) {
-  Costs.update(req.params.id, { $set: { price: req.body.price } }, function(
-    err,
-    result,
-  ) {
+  let toSet = { modified: moment().format('DD-MM-YYYY') };
+
+  Object.keys(req.body).forEach(function(key) {
+    const val = req.body[key];
+    toSet[key] = val;
+  });
+
+  Costs.update(req.params.id, { $set: toSet }, function(err, result) {
     if (err) {
       console.log(err);
       return res.sendStatus(500);

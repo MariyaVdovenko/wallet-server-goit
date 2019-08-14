@@ -1,15 +1,6 @@
 const ObjectID = require('mongodb').ObjectID;
 const db = require('../db');
 
-exports.all = function(cb) {
-  db.get()
-    .collection('costs')
-    .find()
-    .toArray(function(err, docs) {
-      cb(err, docs);
-    });
-};
-
 exports.findById = function(id, cb) {
   db.get()
     .collection('costs')
@@ -19,9 +10,14 @@ exports.findById = function(id, cb) {
 };
 
 exports.findByCategory = function(category, cb) {
+  let q = {};
+  if (!!category) {
+    q = { categories: category };
+  }
   db.get()
     .collection('costs')
-    .find({ categories: `"${category}"` }, function(err, doc) {
+    .find(q)
+    .toArray(function(err, doc) {
       cb(err, doc);
     });
 };

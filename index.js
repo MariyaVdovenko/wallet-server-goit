@@ -14,11 +14,9 @@ app.get('/', function(req, res) {
   res.send('Hello API');
 });
 
-app.get('/costs', costsController.all);
-
 app.get('/costs/:id', costsController.findById);
 
-app.get('/costs', costsController.findByCategory);
+app.get('/costs/', costsController.findByCategory);
 
 app.post('/costs', costsController.create);
 
